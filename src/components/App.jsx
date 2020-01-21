@@ -14,7 +14,7 @@ class App extends Component {
 			this.setState({isLoading: true});
 			const response = await this.getAnime();
 			const animes = await response.json();
-			this.setState({animes, isLoading: false});
+			this.setState({animes, isLoading: true});
 		} catch (err) {
 			throw new Error("failed to fetch data");
 		}
@@ -79,7 +79,7 @@ class App extends Component {
 
 		if (isLoading) {
 			return (
-				<div className='flex'>
+				<div className='loading'>
 					<h1>Loading...</h1>
 				</div>
 			);
