@@ -14,7 +14,7 @@ class App extends Component {
 			this.setState({isLoading: true});
 			const response = await this.getAnime();
 			const animes = await response.json();
-			this.setState({animes, isLoading: true});
+			this.setState({animes, isLoading: false});
 		} catch (err) {
 			throw new Error("failed to fetch data");
 		}
