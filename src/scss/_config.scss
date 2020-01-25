@@ -1,0 +1,14 @@
+$primary-color: #f4b6ff;
+$secondary-color: royalblue;
+
+@mixin transition-ease {
+	transition: all 0.5s ease-in-out;
+}
+
+@mixin reset {
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+}
