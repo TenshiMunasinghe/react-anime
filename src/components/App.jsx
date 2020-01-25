@@ -87,10 +87,6 @@ class App extends Component {
 		} else {
 			return (
 				<>
-					<button type='button' onClick={this.scrollTop} id='scroll'>
-						&#9650;
-					</button>
-
 					<Form year={year} cour={cour} handleChange={this.handleChange} />
 					<main>
 						<h2>
@@ -102,6 +98,9 @@ class App extends Component {
 							})}
 						</ul>
 					</main>
+					<button type='button' onClick={this.scrollTop} id='scroll'>
+						&#9650;
+					</button>
 				</>
 			);
 		}
