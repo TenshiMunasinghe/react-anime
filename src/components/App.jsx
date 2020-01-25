@@ -4,7 +4,6 @@ import AnimeItem from "./AnimeItem";
 
 class App extends Component {
 	state = {
-		isLoading: false,
 		year: "2014",
 		cour: "1",
 		animes: []
@@ -12,10 +11,9 @@ class App extends Component {
 
 	componentDidMount = async _ => {
 		try {
-			this.setState({isLoading: true});
 			const response = await this.getAnime();
 			const animes = await response.json();
-			this.setState({animes, isLoading: false});
+			this.setState({animes});
 		} catch (err) {
 			throw new Error("failed to fetch data");
 		}
@@ -46,13 +44,12 @@ class App extends Component {
 	}
 
 	handleChange = async ev => {
-		this.setState({isLoading: true});
 		let {value, name} = ev.target;
 		const response = await this.getAnime(name, value).catch(e =>
 			console.error(e)
 		);
 		const animes = await response.json();
-		this.setState({animes, [name]: value, isLoading: false});
+		this.setState({animes, [name]: value});
 	};
 
 	scrollTop = () => {
@@ -64,7 +61,7 @@ class App extends Component {
 	};
 
 	render() {
-		let {isLoading, animes, year, cour} = this.state;
+		let {animes, year, cour} = this.state;
 		let season;
 		if (cour === "1") {
 			season = "冬";
@@ -78,32 +75,24 @@ class App extends Component {
 			season = "";
 		}
 
-		if (isLoading) {
-			return (
-				<div className='loading'>
-					<h1>Loading...</h1>
-				</div>
-			);
-		} else {
-			return (
-				<>
-					<Form year={year} cour={cour} handleChange={this.handleChange} />
-					<main>
-						<h2>
-							{year}年{season && season}アニメ
-						</h2>
-						<ul className='grid'>
-							{animes.map(anime => {
-								return <AnimeItem key={anime.id} anime={anime} />;
-							})}
-						</ul>
-					</main>
-					<button type='button' onClick={this.scrollTop} id='scroll'>
-						&#9650;
-					</button>
-				</>
-			);
-		}
+		return (
+			<>
+				<Form year={year} cour={cour} handleChange={this.handleChange} />
+				<main>
+					<h2>
+						{year}年{season && season}アニメ
+					</h2>
+					<ul className='grid'>
+						{animes.map(anime => {
+							return <AnimeItem key={anime.id} anime={anime} />;
+						})}
+					</ul>
+				</main>
+				<button type='button' onClick={this.scrollTop} id='scroll'>
+					&#9650;
+				</button>
+			</>
+		);
 	}
 }
 
