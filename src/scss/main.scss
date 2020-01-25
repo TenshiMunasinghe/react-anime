@@ -8,10 +8,11 @@ body {
 	height: 100%;
 	min-height: 100vh;
 	background: linear-gradient(
-			160deg,
-			rgba($color: $secondary-color, $alpha: 0.8) 10vh,
-			transparent 40vh
-		),
+				160deg,
+				rgba($color: $secondary-color, $alpha: 0.8) 10vh,
+				transparent 40vh
+			)
+			fixed,
 		linear-gradient(
 				-20deg,
 				rgba($color: $secondary-color, $alpha: 0.8) 10vh,
