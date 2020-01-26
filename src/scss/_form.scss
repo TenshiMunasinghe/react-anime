@@ -1,8 +1,8 @@
 form {
 	background-color: rgba($color: #ffffff, $alpha: 0.6);
 	width: 70vw;
-	margin: 2rem auto 0 auto;
-	padding: 0.5rem;
+	margin: 2vw auto 0 auto;
+	padding: 0.5vw;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -14,11 +14,11 @@ form {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin: auto;
+		margin: 0.5vw auto;
 		select {
 			appearance: none;
 			padding: 0.3rem 0.5rem;
-			margin: 0 auto;
+			margin: 1vw auto 0;
 			border: 2px solid $primary-color;
 			border-radius: 15px;
 			text-align: justify;

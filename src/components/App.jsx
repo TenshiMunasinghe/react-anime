@@ -80,7 +80,7 @@ class App extends Component {
 				<Form year={year} cour={cour} handleChange={this.handleChange} />
 				<main>
 					<h2>
-						{year}年{season && season}アニメ
+						<span>{year}</span>年{season && <span>{season}</span>}アニメ
 					</h2>
 					<ul className='grid'>
 						{animes.map(anime => {
