@@ -1,8 +1,13 @@
+html {
+  font-size: calc(100vmin / 32);
+}
+
 form {
   background-color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
   width: 70vw;
-  margin: 2vw auto 0 auto;
-  padding: 0.5vw;
+  margin: 2rem auto 0 auto;
+  padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,8 +22,8 @@ form {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 1.5rem;
-  -webkit-box-shadow: 5px 6px 18px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 6px 18px 1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0.2rem 0.25rem 1.2rem 0.1rem rgba(0, 0, 0, 0.6);
+          box-shadow: 0.2rem 0.25rem 1.2rem 0.1rem rgba(0, 0, 0, 0.6);
 }
 
 form .form-element {
@@ -35,7 +40,7 @@ form .form-element {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0.5vw auto;
+  margin: 0.5rem auto;
 }
 
 form .form-element select {
@@ -43,11 +48,12 @@ form .form-element select {
      -moz-appearance: none;
           appearance: none;
   padding: 0.3rem 0.5rem;
-  margin: 1vw auto 0;
-  border: 2px solid #e12885;
-  border-radius: 15px;
+  margin: 1rem auto 0;
+  border: 0.1rem solid #e12885;
+  border-radius: 1rem;
   text-align: justify;
   text-align-last: center;
+  font-size: 1rem;
 }
 
 .grid {
@@ -55,8 +61,8 @@ form .form-element select {
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -ms-grid-columns: (minmax(11rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   grid-gap: 2rem;
 }
 
@@ -81,8 +87,8 @@ form .form-element select {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   text-align: center;
-  -webkit-box-shadow: 5px 6px 18px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 6px 18px 1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0.3rem 0.35rem 1.5rem 0.3rem rgba(0, 0, 0, 0.6);
+          box-shadow: 0.3rem 0.35rem 1.5rem 0.3rem rgba(0, 0, 0, 0.6);
 }
 
 .grid .item h3 {
@@ -121,8 +127,8 @@ form .form-element select {
   z-index: 1;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(50%, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit minmax(50%, 1fr));
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -154,9 +160,9 @@ form .form-element select {
   right: 0;
   bottom: 0;
   margin: 0 0.5rem 1rem;
-  width: 5vw;
-  height: 5vw;
-  font-size: 1.5vw;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
   background-color: #137a7f;
   border: 1.5px solid #e12885;
   color: #e12885;
@@ -173,9 +179,9 @@ form .form-element select {
 body {
   height: 100%;
   min-height: 100vh;
-  background: linear-gradient(160deg, rgba(19, 122, 127, 0.8) 10vh, transparent 40vh), linear-gradient(-20deg, rgba(19, 122, 127, 0.8) 10vh, transparent 40vh);
+  background: linear-gradient(160deg, rgba(19, 122, 127, 0.8) 5rem, transparent 15rem), linear-gradient(-20deg, rgba(19, 122, 127, 0.8) 5rem, transparent 15rem);
   background-attachment: fixed;
-  font-family: "NicoMoji+", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "NicoMoji+", ToppanBunkyuMidashiGothicStdN-ExtraBold, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #root {
@@ -188,12 +194,12 @@ main {
 
 main h2 {
   text-align: center;
-  font-size: 3vw;
+  font-size: 3rem;
   margin-bottom: 2rem;
 }
 
 main h2 span {
-  font-size: 3.3vw;
+  font-size: 3.3rem;
   color: #e12885;
 }
 /*# sourceMappingURL=main.css.map */

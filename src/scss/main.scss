@@ -9,13 +9,13 @@ body {
 	min-height: 100vh;
 	background: linear-gradient(
 			160deg,
-			rgba($color: $secondary-color, $alpha: 0.8) 10vh,
-			transparent 40vh
+			rgba($color: $secondary-color, $alpha: 0.8) 5rem,
+			transparent 15rem
 		),
 		linear-gradient(
 			-20deg,
-			rgba($color: $secondary-color, $alpha: 0.8) 10vh,
-			transparent 40vh
+			rgba($color: $secondary-color, $alpha: 0.8) 5rem,
+			transparent 15rem
 		);
 	background-attachment: fixed;
 	font-family: "NicoMoji+", ToppanBunkyuMidashiGothicStdN-ExtraBold,
@@ -31,11 +31,11 @@ main {
 	padding: 2rem;
 	h2 {
 		text-align: center;
-		font-size: 3vw;
+		font-size: 3rem;
 		margin-bottom: 2rem;
 
 		span {
-			font-size: 3.3vw;
+			font-size: 3.3rem;
 			color: $primary-color;
 		}
 	}

@@ -12,3 +12,7 @@ $secondary-color: #137a7f;
 		box-sizing: border-box;
 	}
 }
+
+html {
+	font-size: calc(100vmin / 32);
+}
