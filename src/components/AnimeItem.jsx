@@ -1,7 +1,7 @@
 import React from "react";
 
-function AnimeItem(props) {
-	const {title, public_url, twitter_account} = props.anime;
+const AnimeItem = ({anime}) => {
+	const {title, public_url, twitter_account} = anime;
 	const haveLinks = !(public_url || twitter_account);
 	return (
 		<li className='item'>
@@ -28,6 +28,6 @@ function AnimeItem(props) {
 			</div>
 		</li>
 	);
-}
+};
 
 export default AnimeItem;

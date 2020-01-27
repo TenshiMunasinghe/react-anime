@@ -1,8 +1,7 @@
-import React, {Component} from "react";
-import Form from "./Form";
-import AnimeItem from "./AnimeItem";
+import React, {PureComponent} from "react";
+import AnimePage from "./AnimePage";
 
-class App extends Component {
+class App extends PureComponent {
 	state = {
 		year: "2014",
 		cour: "1",
@@ -76,22 +75,14 @@ class App extends Component {
 		}
 
 		return (
-			<>
-				<Form year={year} cour={cour} handleChange={this.handleChange} />
-				<main>
-					<h2>
-						<span>{year}</span>年{season && <span>{season}</span>}アニメ
-					</h2>
-					<ul className='grid'>
-						{animes.map(anime => {
-							return <AnimeItem key={anime.id} anime={anime} />;
-						})}
-					</ul>
-				</main>
-				<button type='button' onClick={this.scrollTop} id='scroll'>
-					&#9650;
-				</button>
-			</>
+			<AnimePage
+				year={year}
+				cour={cour}
+				season={season}
+				animes={animes}
+				handleChange={this.handleChange}
+				scrollTop={this.scrollTop}
+			/>
 		);
 	}
 }
