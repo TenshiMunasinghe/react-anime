@@ -79,7 +79,6 @@ form .form-element select {
 }
 
 .grid .item {
-  font-family: Helvetica-Light, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -106,6 +105,7 @@ form .form-element select {
 
 .grid .item h3 {
   font-size: 1.5rem;
+  font-family: Helvetica-Light, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .grid .item::after {
