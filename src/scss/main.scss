@@ -1,3 +1,4 @@
+@import "reset";
 @import "config";
 @import "form";
 @import "grids";
@@ -35,7 +36,7 @@ main {
 		margin-bottom: 2rem;
 
 		span {
-			font-size: 3.3rem;
+			font-size: 3.5rem;
 			color: $primary-color;
 		}
 	}
