@@ -35,3 +35,17 @@ $secondary-color: #86cecb;
 		text-decoration: none;
 	}
 }
+
+@mixin background-gradient {
+	background: linear-gradient(
+			160deg,
+			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
+			transparent 15rem
+		),
+		linear-gradient(
+			-20deg,
+			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
+			transparent 15rem
+		);
+	background-attachment: fixed;
+}

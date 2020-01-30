@@ -23,18 +23,7 @@ html {
 main {
 	padding: 1rem 2rem;
 	min-height: calc(100vh - 3rem);
-	background: linear-gradient(
-			160deg,
-			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
-			transparent 15rem
-		),
-		linear-gradient(
-			-20deg,
-			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
-			transparent 15rem
-		);
-	background-attachment: fixed;
-
+	@include background-gradient;
 	.error {
 		display: flex;
 		margin: auto;

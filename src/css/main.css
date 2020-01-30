@@ -42,6 +42,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: linear-gradient(160deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem), linear-gradient(-20deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem);
+  background-attachment: fixed;
   height: 100vh;
 }
 

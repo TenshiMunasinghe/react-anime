@@ -10,14 +10,12 @@ const Home = () => {
 	return (
 		<>
 			{loading ? (
-				<main>
-					<section className='loading'>
-						<div className='loading-content'>
-							<p>loading...</p>
-							<img src={gifLoad} alt='' />
-						</div>
-					</section>
-				</main>
+				<section className='loading'>
+					<div className='loading-content'>
+						<p>loading...</p>
+						<img src={gifLoad} alt='' />
+					</div>
+				</section>
 			) : (
 				<>
 					<header>

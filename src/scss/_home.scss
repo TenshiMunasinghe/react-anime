@@ -19,6 +19,7 @@
 	margin: auto;
 	justify-content: center;
 	align-items: center;
+	@include background-gradient;
 	height: 100vh;
 	* {
 		text-align: center;
