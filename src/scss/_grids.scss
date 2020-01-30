@@ -2,7 +2,7 @@
 	max-width: 70vw;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 	grid-gap: 2rem;
 	z-index: 1;
 	.item {
@@ -16,7 +16,6 @@
 		padding: 1rem;
 		background: rgba($color: #fff, $alpha: 0.7);
 		border-radius: 10px;
-		text-align: center;
 		box-shadow: 0.3rem 0.35rem 1.5rem 0.3rem rgba(0, 0, 0, 0.5);
 
 		h3 {

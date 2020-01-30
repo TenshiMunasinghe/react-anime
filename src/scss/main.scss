@@ -21,8 +21,8 @@ html {
 }
 
 main {
-	padding: 4rem 2rem;
-	min-height: 100vh;
+	padding: 1rem 2rem;
+	min-height: calc(100vh - 3rem);
 	background: linear-gradient(
 			160deg,
 			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
@@ -34,15 +34,16 @@ main {
 			transparent 15rem
 		);
 	background-attachment: fixed;
-}
 
-.error {
-	min-height: 100vh;
-	padding-top: 2rem;
-	section {
-		height: 50%;
+	.error {
 		display: flex;
+		margin: auto;
 		justify-content: center;
 		align-items: center;
+		height: calc(100vh - 5rem);
+		* {
+			text-align: center;
+			margin: auto;
+		}
 	}
 }

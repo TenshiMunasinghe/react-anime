@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import TempApp from "./components/TempApp"
+import TempApp from "./components/App"
 import {AnimeProvider} from "./Context"
 import "./css/main.css"
 
