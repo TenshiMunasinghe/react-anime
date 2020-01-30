@@ -8,6 +8,36 @@
   src: url("../fonts/SourceHanSans-Medium.otf") format("opentype");
 }
 
+@-webkit-keyframes showList {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes showList {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
 .home {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -78,36 +108,6 @@ header h2 {
 header h2 span {
   font-size: 1.5rem;
   color: #86cecb;
-}
-
-@-webkit-keyframes showList {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-  1% {
-    display: block;
-    opacity: 0;
-  }
-  100% {
-    display: block;
-    opacity: 1;
-  }
-}
-
-@keyframes showList {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-  1% {
-    display: block;
-    opacity: 0;
-  }
-  100% {
-    display: block;
-    opacity: 1;
-  }
 }
 
 .form .dropdown {
@@ -329,6 +329,9 @@ body #root {
 html {
   font-size: calc(100vmin / 32);
   scroll-behavior: smooth;
+}
+
+body {
   font-size: 1rem;
 }
 
