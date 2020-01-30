@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
 const AnimeItem = ({anime}) => {
-	const {title, public_url, twitter_account} = anime;
-	const haveLinks = !(public_url || twitter_account);
+	const {title, public_url, twitter_account} = anime
+	const haveLinks = !(public_url || twitter_account)
 	return (
 		<li className='item'>
 			<h3>{title}</h3>
@@ -27,7 +27,7 @@ const AnimeItem = ({anime}) => {
 				)}
 			</div>
 		</li>
-	);
-};
+	)
+}
 
-export default AnimeItem;
+export default AnimeItem

@@ -1,8 +1,8 @@
-import React from "react";
-import Form from "./Form";
-import AnimeItem from "./AnimeItem";
+import React from "react"
+import Form from "./Form"
+import AnimeItem from "./AnimeItem"
 
-const AnimePage = ({year, cour, season, animes, handleChange, scrollTop}) => {
+const AnimePage = ({year, cour, season, animes, handleChange}) => {
 	if (animes.length === 0) {
 		return (
 			<div className='error'>
@@ -11,7 +11,7 @@ const AnimePage = ({year, cour, season, animes, handleChange, scrollTop}) => {
 					<span>この期間の情報はありません。</span>
 				</section>
 			</div>
-		);
+		)
 	}
 	return (
 		<>
@@ -22,15 +22,15 @@ const AnimePage = ({year, cour, season, animes, handleChange, scrollTop}) => {
 				</h2>
 				<ul className='grid'>
 					{animes.map(anime => {
-						return <AnimeItem key={anime.id} anime={anime} />;
+						return <AnimeItem key={anime.id} anime={anime} />
 					})}
 				</ul>
 			</main>
-			<button type='button' onClick={scrollTop} id='scroll'>
-				&#9650;
+			<button type='button' id='scroll'>
+				<a href='#root'>&#9650;</a>
 			</button>
 		</>
-	);
-};
+	)
+}
 
-export default AnimePage;
+export default AnimePage

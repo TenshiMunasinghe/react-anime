@@ -1,5 +1,24 @@
 $primary-color: #e12885;
-$secondary-color: #137a7f;
+$secondary-color: #86cecb;
+
+@font-face {
+	font-family: "nico";
+	src: url("../fonts/nicomoji-plus_1.11.ttf") format("truetype");
+}
+@font-face {
+	font-family: "hans";
+	src: url("../fonts/SourceHanSans-Medium.otf") format("opentype");
+}
+
+@mixin nico-font {
+	font-family: "nico", ToppanBunkyuMidashiGothicStdN-ExtraBold,
+		BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@mixin Hans-font {
+	font-family: "hans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
 @mixin transition-ease {
 	transition: all 0.5s ease-in-out;
@@ -15,8 +34,4 @@ $secondary-color: #137a7f;
 	a {
 		text-decoration: none;
 	}
-}
-
-html {
-	font-size: calc(100vmin / 32);
 }

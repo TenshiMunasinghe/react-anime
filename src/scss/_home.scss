@@ -1,0 +1,15 @@
+.home {
+	display: flex;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 3rem);
+	* {
+		text-align: center;
+		margin: auto;
+	}
+}
+
+.space {
+	height: 3rem;
+}

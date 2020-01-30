@@ -1,33 +1,42 @@
-import React from "react";
+import React from "react"
+import {Link} from "react-router-dom"
+import {AnimeContext} from "../Context"
 
-const Form = ({year, cour, handleChange}) => {
+const Form = () => {
+	let {years, cours, year, cour, updateCondition, getSeason} = React.useContext(
+		AnimeContext
+	)
+	const yearsLinks = years.map((e, i) => (
+		<Link
+			key={i}
+			to={`/${e}/${cour}`}
+			onClick={() => updateCondition(e, "year")}>
+			<span>{e}</span>
+		</Link>
+	))
+	const coursLinks = cours.map((e, i) => {
+		const season = getSeason(e)
+		return (
+			<Link
+				key={i}
+				to={`/${year}/${e}`}
+				onClick={() => updateCondition(e, "cour")}>
+				<span>{season}</span>
+			</Link>
+		)
+	})
 	return (
-		<form onSubmit={e => e.preventDefault}>
-			<div className='form-element'>
-				<label htmlFor='yearList'>年を選んでください</label>
-				<select name='year' onChange={handleChange} value={year}>
-					<option value='2014'>2014</option>
-					<option value='2015'>2015</option>
-					<option value='2016'>2016</option>
-					<option value='2017'>2017</option>
-					<option value='2018'>2018</option>
-					<option value='2019'>2019</option>
-					<option value='2020'>2020</option>
-				</select>
+		<div className='form' id='year'>
+			<div className='dropdown'>
+				<button>{year}</button>
+				<div className='dropdown-content'>{yearsLinks}</div>
 			</div>
-
-			<div className='form-element'>
-				<label htmlFor='season'>季節を選んでください</label>
-				<select name='cour' id='season' onChange={handleChange} value={cour}>
-					<option value='1'>冬</option>
-					<option value='2'>春</option>
-					<option value='3'>夏</option>
-					<option value='4'>秋</option>
-					<option value='all'>全て</option>
-				</select>
+			<div className='dropdown'>
+				<button>{getSeason(cour)}</button>
+				<div className='dropdown-content'>{coursLinks}</div>
 			</div>
-		</form>
-	);
-};
+		</div>
+	)
+}
 
-export default Form;
+export default Form

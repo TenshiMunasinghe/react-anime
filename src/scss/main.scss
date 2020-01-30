@@ -1,4 +1,6 @@
 @import "config";
+@import "home";
+@import "header";
 @import "form";
 @import "grids";
 @import "scroll-btn";
@@ -7,38 +9,31 @@
 body {
 	height: 100%;
 	min-height: 100vh;
-	background: linear-gradient(
-			160deg,
-			rgba($color: $secondary-color, $alpha: 0.8) 5rem,
-			transparent 15rem
-		),
-		linear-gradient(
-			-20deg,
-			rgba($color: $secondary-color, $alpha: 0.8) 5rem,
-			transparent 15rem
-		);
-	background-attachment: fixed;
-	font-family: "NicoMoji+", ToppanBunkyuMidashiGothicStdN-ExtraBold,
-		BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-		"Open Sans", "Helvetica Neue", sans-serif;
-
+	@include nico-font;
 	#root {
 		height: 100%;
 	}
 }
 
-main {
-	padding: 2rem;
-	h2 {
-		text-align: center;
-		font-size: 3rem;
-		margin-bottom: 2rem;
+html {
+	font-size: calc(100vmin / 32);
+	scroll-behavior: smooth;
+}
 
-		span {
-			font-size: 3.5rem;
-			color: $primary-color;
-		}
-	}
+main {
+	padding: 4rem 2rem;
+	min-height: 100vh;
+	background: linear-gradient(
+			160deg,
+			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
+			transparent 15rem
+		),
+		linear-gradient(
+			-20deg,
+			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
+			transparent 15rem
+		);
+	background-attachment: fixed;
 }
 
 .error {
@@ -49,9 +44,5 @@ main {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-
-	form {
-		margin: 0 auto 2rem auto;
 	}
 }
