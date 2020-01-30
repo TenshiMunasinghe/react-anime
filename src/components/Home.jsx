@@ -24,8 +24,8 @@ const Home = () => {
 						<Form />
 						<h2>AniFinder</h2>
 					</header>
+					<div className='space'></div>
 					<main>
-						<div className='space'></div>
 						<section className='home'>
 							<div className='home-content'>
 								<p>放送年と季節を選択してください</p>
