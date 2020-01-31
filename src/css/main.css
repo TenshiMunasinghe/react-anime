@@ -433,7 +433,7 @@ body {
 
 main {
   padding: 1rem 2rem;
-  min-height: calc(100vh - $header-height-mobile);
+  min-height: calc(100vh - 5.3rem);
   min-width: 100vw;
   background: linear-gradient(160deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem), linear-gradient(-20deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem);
   background-attachment: fixed;
@@ -470,7 +470,7 @@ main .error img {
 
 @media only screen and (min-width: 1224px) {
   main {
-    min-height: calc(100vh - $header-height-lg);
+    min-height: calc(100vh - 4rem);
   }
 }
 /*# sourceMappingURL=main.css.map */
