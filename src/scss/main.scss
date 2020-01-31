@@ -1,4 +1,5 @@
 @import "config";
+@import "media";
 @import "home";
 @import "header";
 @import "form";
@@ -9,6 +10,7 @@
 body {
 	height: 100%;
 	min-height: 100vh;
+	min-width: 100vw;
 	@include nico-font;
 	#root {
 		height: 100%;
@@ -26,7 +28,8 @@ body {
 
 main {
 	padding: 1rem 2rem;
-	min-height: calc(100vh - 3rem);
+	min-height: calc(100vh - $header-height-mobile);
+	min-width: 100vw;
 	@include background-gradient;
 	.error {
 		display: flex;
@@ -38,5 +41,16 @@ main {
 			text-align: center;
 			margin: auto;
 		}
+
+		img {
+			height: 16rem;
+			@include desktop-laptop {
+				height: 13rem;
+			}
+		}
+	}
+
+	@include desktop-laptop {
+		min-height: calc(100vh - $header-height-lg);
 	}
 }

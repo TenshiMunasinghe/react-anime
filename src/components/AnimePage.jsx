@@ -52,7 +52,7 @@ export class TempAnimePage extends PureComponent {
 			<>
 				<header>
 					<Form />
-					<h2>
+					<h2 className='info'>
 						<span>{year}</span>年
 						{season === "全て" ? "" : <span>{season}</span>}
 						アニメ

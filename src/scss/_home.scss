@@ -11,7 +11,11 @@
 }
 
 .space {
-	padding-top: 3rem;
+	padding-top: $header-height-mobile;
+
+	@include desktop-laptop {
+		padding-top: $header-height-lg;
+	}
 }
 
 .loading {
@@ -19,6 +23,7 @@
 	margin: auto;
 	justify-content: center;
 	align-items: center;
+	font-size: 1.5rem;
 	@include background-gradient;
 	height: 100vh;
 	* {

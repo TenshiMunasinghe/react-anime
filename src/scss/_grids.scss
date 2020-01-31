@@ -6,75 +6,99 @@
 	grid-gap: 2rem;
 	z-index: 1;
 	.item {
-		position: relative;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		min-height: 10vh;
-		padding: 1rem;
+		padding-top: 1rem;
 		background: rgba($color: #fff, $alpha: 0.7);
-		border-radius: 10px;
 		box-shadow: 0.3rem 0.35rem 1.5rem 0.3rem rgba(0, 0, 0, 0.5);
 
 		h3 {
-			font-size: 1.5rem;
-			@include Hans-font;
-		}
-
-		&::after {
-			content: "";
-			position: absolute;
-			top: 100%;
-			left: 0;
+			display: flex;
 			height: 100%;
-			width: 100%;
-			background: $secondary-color;
-			opacity: 0;
-			@include transition-ease;
+			font-size: 1.7rem;
+			text-align: center;
+			padding: 0 0.5rem;
+			@include Hans-font;
+			align-items: center;
 		}
 
-		&:hover {
+		@include desktop-laptop {
+			position: relative;
+			padding: 1rem;
+
 			&::after {
-				top: 0;
-				opacity: 0.9;
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background: $secondary-color;
+				opacity: 0;
+				@include transition-ease;
+				z-index: 2;
 			}
-			.links .link *,
-			.links span {
-				opacity: 1;
-				pointer-events: all;
+
+			&:hover {
+				&::after {
+					top: 0;
+					opacity: 0.9;
+				}
+				.links .link *,
+				.links span {
+					opacity: 1;
+				}
 			}
 		}
 
 		.links {
-			position: absolute;
-			top: 0;
-			height: 100%;
 			width: 100%;
-			z-index: 2;
-			display: grid;
-			grid-template-rows: repeat(auto-fit 1fr);
+			margin-top: 0.5rem;
+			padding: 0.5rem;
+			background-color: $secondary-color;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
 			align-items: center;
-			text-align: center;
 
-			span {
-				opacity: 0;
-				color: #fff;
-				@include transition-ease;
+			a {
+				color: $primary-color;
+				display: inline-block;
+				font-size: 1.2rem;
+				padding: 0.5rem;
 			}
 
-			.link {
-				* {
+			@include desktop-laptop {
+				position: absolute;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				z-index: 3;
+				margin: auto;
+				text-align: center;
+				background-color: transparent;
+
+				span {
 					opacity: 0;
-					pointer-events: none;
 					color: #fff;
 					@include transition-ease;
 				}
 
-				&:hover {
+				.link {
 					* {
-						color: $primary-color;
+						opacity: 0;
+						color: #fff;
+						@include transition-ease;
+					}
+
+					&:hover {
+						* {
+							color: $primary-color;
+						}
 					}
 				}
 			}

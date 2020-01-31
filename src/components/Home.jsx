@@ -20,7 +20,7 @@ const Home = () => {
 				<>
 					<header>
 						<Form />
-						<h2>AniFinder</h2>
+						<h2 className='title'>AniFinder</h2>
 					</header>
 					<div className='space'></div>
 					<main>
