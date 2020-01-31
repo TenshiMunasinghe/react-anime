@@ -61,9 +61,11 @@
 			padding: 0.5rem;
 			background-color: $secondary-color;
 			display: flex;
+			flex-direction: column;
 			flex-wrap: wrap;
 			justify-content: space-around;
 			align-items: center;
+			z-index: 3;
 
 			a {
 				color: $primary-color;
@@ -77,10 +79,13 @@
 				top: 0;
 				height: 100%;
 				width: 100%;
-				z-index: 3;
 				margin: auto;
 				text-align: center;
 				background-color: transparent;
+
+				a {
+					padding: 0;
+				}
 
 				span {
 					opacity: 0;
