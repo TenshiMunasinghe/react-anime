@@ -41,6 +41,7 @@ export class TempAnimePage extends PureComponent {
 		let {year, cour} = this.props.match.params
 
 		let animes = allAnimes.find(e => e.year === year && e.cour === cour)
+
 		if (!animes) {
 			return <Redirect to='/' />
 		}
