@@ -28,11 +28,11 @@ const Form = () => {
 	return (
 		<div className='form' id='year'>
 			<div className='dropdown'>
-				<button>{year}</button>
+				<div className='button'>{year}</div>
 				<div className='dropdown-content'>{yearsLinks}</div>
 			</div>
 			<div className='dropdown'>
-				<button>{getSeason(cour)}</button>
+				<div className='button'>{getSeason(cour)}</div>
 				<div className='dropdown-content'>{coursLinks}</div>
 			</div>
 		</div>

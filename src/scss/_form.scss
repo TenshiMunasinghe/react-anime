@@ -19,13 +19,16 @@
 			}
 		}
 
-		button {
+		.button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
 			background-color: #fff;
 			border: none;
 			width: 7rem;
 			height: 3.5rem;
 			font-size: 1.5rem;
-			border-radius: 0.2rem;
 			font-family: inherit;
 
 			&:hover {
@@ -45,6 +48,7 @@
 			min-width: 8vw;
 			width: 8rem;
 			background-color: #fff;
+			box-shadow: 0.1rem 0.2rem 0.8rem 0.1rem rgba(0, 0, 0, 0.5);
 
 			a {
 				font-size: 1.5rem;
