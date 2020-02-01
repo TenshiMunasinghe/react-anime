@@ -10,14 +10,6 @@
 	}
 }
 
-.space {
-	padding-top: $header-height-mobile;
-
-	@include desktop-laptop {
-		padding-top: $header-height-lg;
-	}
-}
-
 .loading {
 	display: flex;
 	margin: auto;

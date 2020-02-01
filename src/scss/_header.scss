@@ -1,4 +1,4 @@
-header {
+.header {
 	position: fixed;
 	width: 100%;
 	height: $header-height-mobile;
@@ -8,32 +8,33 @@ header {
 	align-items: center;
 	z-index: 999;
 
-	h2 {
+	&__title {
 		text-align: center;
-		&.title {
+		font-size: 2rem;
+	}
+
+	&__info {
+		font-size: 1.7rem;
+
+		&--emphasis {
 			font-size: 2rem;
-		}
-		&.info {
-			font-size: 1.5rem;
-			span {
-				font-size: 2rem;
-				color: $secondary-color;
-			}
+			color: $secondary-color;
 		}
 	}
 
 	@include desktop-laptop {
 		height: $header-height-lg;
-		h2 {
-			&.title {
+
+		&__title {
+			font-size: 2.5rem;
+		}
+
+		&__info {
+			font-size: 2rem;
+
+			&--emphasis {
 				font-size: 2.5rem;
-			}
-			&.info {
-				font-size: 2rem;
-				span {
-					font-size: 2.5rem;
-					color: $secondary-color;
-				}
+				color: $secondary-color;
 			}
 		}
 	}
