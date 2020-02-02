@@ -1,4 +1,4 @@
-.home {
+.error {
 	display: flex;
 	margin: auto;
 	justify-content: center;
@@ -7,5 +7,12 @@
 	* {
 		text-align: center;
 		margin: auto;
+	}
+
+	&__image {
+		height: 16rem;
+		@include desktop-laptop {
+			height: 13rem;
+		}
 	}
 }

@@ -1,4 +1,4 @@
-#scroll {
+#scroll-btn {
 	position: fixed;
 	right: 0;
 	bottom: 0;
@@ -12,10 +12,10 @@
 	opacity: 0.7;
 	color: $primary-color;
 	text-align: center;
+}
 
-	span {
-		line-height: 3rem;
-	}
+.scroll-btn__icon {
+	line-height: 3rem;
 }
 
 .hide {

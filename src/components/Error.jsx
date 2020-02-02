@@ -12,9 +12,9 @@ const Error = ({text}) => {
 			<div className='space'></div>
 			<main>
 				<section className='error'>
-					<div className='error-content'>
-						<p>{text}</p>
-						<img src={gifError} alt='' />
+					<div className='error__content'>
+						<p className='error__text'>{text}</p>
+						<img src={gifError} alt='' className='error__img' />
 					</div>
 				</section>
 			</main>

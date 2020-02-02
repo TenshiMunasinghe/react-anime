@@ -79,9 +79,9 @@ export class AnimePage extends PureComponent {
 				<a
 					href='#root'
 					type='button'
-					id='scroll'
+					id='scroll-btn'
 					className={this.state.showBtn ? "show" : "hide"}>
-					<span>&#9650;</span>
+					<span className='scroll-btn__icon'>&#9650;</span>
 				</a>
 			</>
 		)

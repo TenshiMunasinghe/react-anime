@@ -1,0 +1,51 @@
+html {
+	font-size: calc(100vmin / 32);
+	scroll-behavior: smooth;
+}
+
+body {
+	height: 100%;
+	min-height: 100vh;
+	min-width: 100vw;
+	font-size: 1rem;
+	color: $font-color;
+	@include nico-font;
+}
+
+#root {
+	height: 100%;
+}
+
+main {
+	padding: 1rem 0;
+	min-height: calc(100vh - #{$header-height-mobile});
+	min-width: 100vw;
+	// @include background-gradient;
+	background-color: #bec8d1;
+
+	@include desktop-laptop {
+		min-height: calc(100vh - #{$header-height-lg});
+	}
+}
+
+.space {
+	padding-top: $header-height-mobile;
+
+	@include desktop-laptop {
+		padding-top: $header-height-lg;
+	}
+}
+
+.loading {
+	display: flex;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	@include background-gradient;
+	height: 100vh;
+	* {
+		text-align: center;
+		margin: auto;
+	}
+}

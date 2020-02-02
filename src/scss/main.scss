@@ -1,65 +1,10 @@
 @import "config";
 @import "media";
+@import "global";
 @import "home";
 @import "header";
 @import "form";
-@import "grids";
+@import "grid";
 @import "scroll-btn";
+@import "error";
 @include reset;
-
-body {
-	height: 100%;
-	min-height: 100vh;
-	min-width: 100vw;
-	@include nico-font;
-	#root {
-		height: 100%;
-	}
-}
-
-html {
-	font-size: calc(100vmin / 32);
-	scroll-behavior: smooth;
-}
-
-body {
-	font-size: 1rem;
-}
-
-main {
-	padding: 1rem 2rem;
-	min-height: calc(100vh - #{$header-height-mobile});
-	min-width: 100vw;
-	@include background-gradient;
-
-	@include desktop-laptop {
-		min-height: calc(100vh - #{$header-height-lg});
-	}
-}
-
-.space {
-	padding-top: $header-height-mobile;
-
-	@include desktop-laptop {
-		padding-top: $header-height-lg;
-	}
-}
-
-.error {
-	display: flex;
-	margin: auto;
-	justify-content: center;
-	align-items: center;
-	height: calc(100vh - 5rem);
-	* {
-		text-align: center;
-		margin: auto;
-	}
-
-	img {
-		height: 16rem;
-		@include desktop-laptop {
-			height: 13rem;
-		}
-	}
-}
