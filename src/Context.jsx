@@ -1,9 +1,7 @@
 import React, {useState, useEffect, createContext} from "react"
+import {years, cours, seasons} from "./constants"
 
 const AnimeContext = createContext()
-const years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020"]
-const cours = ["1", "2", "3", "4", "all"]
-const seasons = ["冬", "春", "夏", "秋"]
 
 const AnimeProvider = props => {
 	const [allAnimes, setAllAnimes] = useState([])
@@ -50,8 +48,6 @@ const AnimeProvider = props => {
 			value={{
 				allAnimes,
 				loading,
-				years,
-				cours,
 				getAnime,
 				getSeason
 			}}>
