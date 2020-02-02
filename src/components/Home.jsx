@@ -18,14 +18,12 @@ const Home = () => {
 						<h2 className='header__title'>AniFinder</h2>
 					</header>
 					<div className='space'></div>
-					<main>
-						<section className='home'>
-							<div className='home__content'>
-								<p className='home__p'>放送年と季節を選択してください</p>
-								<img src={gifHome} alt='' className='home__img' />
-							</div>
-						</section>
-					</main>
+					<section className='home'>
+						<div className='home__content'>
+							<p className='home__p'>放送年と季節を選択してください</p>
+							<img src={gifHome} alt='' className='home__img' />
+						</div>
+					</section>
 				</>
 			)}
 		</>

@@ -100,7 +100,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.5rem;
-  background: linear-gradient(160deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem), linear-gradient(-20deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem);
+  background: linear-gradient(160deg, rgba(134, 206, 203, 0.9) 8rem, transparent 15rem), linear-gradient(-20deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem);
   background-attachment: fixed;
   height: 100vh;
 }
@@ -111,6 +111,7 @@ main {
 }
 
 .home {
+  min-height: calc(100vh - 5.3rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,11 +123,19 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: calc(100vh - 5rem);
+  background: linear-gradient(160deg, rgba(134, 206, 203, 0.9) 8rem, transparent 15rem), linear-gradient(-20deg, rgba(134, 206, 203, 0.9) 5rem, transparent 15rem);
+  background-attachment: fixed;
 }
 
 .home * {
   text-align: center;
   margin: auto;
+}
+
+@media only screen and (min-width: 1224px) {
+  .home {
+    min-height: calc(100vh - 4rem);
+  }
 }
 
 .header {
@@ -333,7 +342,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 0 0.5rem;
   font-family: "hans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

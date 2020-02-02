@@ -1,6 +1,7 @@
 $primary-color: #e12885;
 $secondary-color: #86cecb;
 $font-color: #373b3e;
+$background-color: #bec8d1;
 $header-height-mobile: 5.3rem;
 $header-height-lg: 4rem;
 
@@ -42,7 +43,7 @@ $header-height-lg: 4rem;
 @mixin background-gradient {
 	background: linear-gradient(
 			160deg,
-			rgba($color: $secondary-color, $alpha: 0.9) 5rem,
+			rgba($color: $secondary-color, $alpha: 0.9) 8rem,
 			transparent 15rem
 		),
 		linear-gradient(

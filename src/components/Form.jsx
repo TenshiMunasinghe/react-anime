@@ -1,9 +1,9 @@
-import React from "react"
+import React, {useContext} from "react"
 import {Link} from "react-router-dom"
 import {AnimeContext} from "../Context"
 
 const Form = ({year, cour}) => {
-	let {years, cours, getSeason} = React.useContext(AnimeContext)
+	let {years, cours, getSeason} = useContext(AnimeContext)
 
 	const yearsLinks = years.map((e, i) => (
 		<Link key={i} to={`/${e}/${cour}`} className='form__link'>

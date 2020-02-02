@@ -21,7 +21,7 @@ main {
 	min-height: calc(100vh - #{$header-height-mobile});
 	min-width: 100vw;
 	// @include background-gradient;
-	background-color: #bec8d1;
+	background-color: $background-color;
 
 	@include desktop-laptop {
 		min-height: calc(100vh - #{$header-height-lg});
