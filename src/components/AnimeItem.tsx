@@ -1,6 +1,14 @@
-import React from "react"
+import * as React from "react"
 
-const AnimeItem = ({anime}) => {
+interface ItemProps {
+	anime: {
+		title: string
+		public_url?: string
+		twitter_account?: string
+	}
+}
+
+const AnimeItem: React.FC<ItemProps> = ({anime}) => {
 	const {title, public_url, twitter_account} = anime
 	const haveLinks = !(public_url || twitter_account)
 	return (

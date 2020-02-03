@@ -1,7 +1,7 @@
-import React from "react"
-import gifLoad from "../gifs/animeGif4.gif"
+import * as React from "react"
+const gifLoad = require("../gifs/animeGif4.gif")
 
-const Loading = () => {
+const Loading: React.FC = () => {
 	return (
 		<section className='loading'>
 			<div className='loading__content'>

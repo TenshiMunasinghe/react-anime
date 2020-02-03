@@ -1,21 +1,31 @@
-import React, {useState, useEffect, createContext} from "react"
+import * as React from "react"
 import {years, cours, seasons} from "./constants"
 
-const AnimeContext = createContext()
+const {useState, useEffect, createContext} = React
 
-const AnimeProvider = props => {
-	const [allAnimes, setAllAnimes] = useState([])
+interface ContextProps {
+	allAnimes: any[]
+	loading: boolean
+	getAnime: any
+	getSeason: any
+}
+
+const AnimeContext = createContext({} as ContextProps)
+
+const AnimeProvider: React.FC<{
+	children: React.ReactNode
+}> = props => {
+	const [allAnimes, setAllAnimes] = useState<any[]>([])
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		const getData = async (year, cour) => {
+		const getData = async (year: string, cour: string) => {
 			cour = cour === "all" ? "" : `/${cour}`
 			const response = await fetch(
 				`https://api.moemoe.tokyo/anime/v1/master/${year}${cour}`
 			)
 			return response
 		}
-
 		;(async () => {
 			try {
 				let tempAllAnimes = []
@@ -34,12 +44,13 @@ const AnimeProvider = props => {
 		})()
 	}, [])
 
-	const getAnime = (year, cour) => {
+	const getAnime = (year: string, cour: string) => {
 		return allAnimes.find(e => e.year === year && e.cour === cour)
 	}
 
-	const getSeason = e => {
-		const season = seasons[e - 1] ? seasons[e - 1] : "全て"
+	const getSeason = (cour: string) => {
+		const i = Number(cour)
+		const season = seasons[i - 1] ? seasons[i - 1] : "全て"
 		return season
 	}
 
@@ -56,6 +67,4 @@ const AnimeProvider = props => {
 	)
 }
 
-const AnimeConsumer = AnimeProvider.Consumer
-
-export {AnimeProvider, AnimeConsumer, AnimeContext}
+export {AnimeProvider, AnimeContext}

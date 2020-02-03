@@ -1,9 +1,16 @@
-import React, {useContext} from "react"
+import * as React from "react"
 import {years, cours} from "../constants"
 import {Link} from "react-router-dom"
 import {AnimeContext} from "../Context"
 
-const Form = ({year, cour}) => {
+interface FormProp {
+	year?: string
+	cour?: string
+}
+
+const {useContext} = React
+
+const Form: React.FC<FormProp> = ({year, cour}) => {
 	let {getSeason} = useContext(AnimeContext)
 
 	const yearsLinks = years.map((e, i) => (

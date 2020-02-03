@@ -1,10 +1,10 @@
-import React from "react"
+import * as React from "react"
 import {Route, Switch} from "react-router-dom"
 import Home from "./Home"
 import AnimePage from "./AnimePage"
-import Error from "./Error"
+import Error from "./ErrorPage"
 
-const App = () => {
+const App: React.FC = () => {
 	return (
 		<Switch>
 			<Route exact path='/' component={Home} />

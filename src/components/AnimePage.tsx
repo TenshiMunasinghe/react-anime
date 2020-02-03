@@ -1,11 +1,16 @@
-import React, {useState, useContext, useEffect} from "react"
+import * as React from "react"
+import {RouteComponentProps} from "react-router-dom"
 import {AnimeContext} from "../Context"
 import AnimeItem from "./AnimeItem"
 import Form from "./Form"
 import Loading from "./Loading"
-import Error from "./Error"
+import Error from "./ErrorPage"
 
-const AnimePage = props => {
+interface PageProps extends RouteComponentProps<{year: string; cour: string}> {}
+
+const {useState, useContext, useEffect} = React
+
+const AnimePage: React.FC<PageProps> = props => {
 	const [showBtn, setShowBtn] = useState(false)
 
 	useEffect(() => {
@@ -59,7 +64,7 @@ const AnimePage = props => {
 			<div className='space'></div>
 			<main>
 				<ul className='grid'>
-					{animes.map(anime => {
+					{animes.map((anime: any) => {
 						return <AnimeItem key={anime.id} anime={anime} />
 					})}
 				</ul>

@@ -1,10 +1,12 @@
-import React, {useContext} from "react"
+import * as React from "react"
 import {AnimeContext} from "../Context"
 import Form from "./Form"
 import Loading from "./Loading"
-import gifHome from "../gifs/animeGif2.gif"
+const gifHome = require("../gifs/animeGif2.gif")
 
-const Home = () => {
+const {useContext} = React
+
+const Home: React.FC = () => {
 	const {loading} = useContext(AnimeContext)
 
 	return (

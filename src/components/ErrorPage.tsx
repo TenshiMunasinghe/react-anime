@@ -1,8 +1,12 @@
-import React from "react"
+import * as React from "react"
 import Form from "./Form"
-import gifError from "../gifs/animeGif3.gif"
+const gifError = require("../gifs/animeGif3.gif")
 
-const Error = ({text}) => {
+interface ErrorProp {
+	text?: string
+}
+
+const ErrorPage: React.FC<ErrorProp> = ({text}) => {
 	return (
 		<>
 			<header className='header'>
@@ -22,8 +26,8 @@ const Error = ({text}) => {
 	)
 }
 
-Error.defaultProps = {
+ErrorPage.defaultProps = {
 	text: "page not found"
 }
 
-export default Error
+export default ErrorPage
