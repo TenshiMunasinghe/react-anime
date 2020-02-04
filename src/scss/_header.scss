@@ -9,6 +9,10 @@
 	z-index: 999;
 
 	&__title {
+		background-image: linear-gradient(to right, $font-color, $secondary-color);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
 		text-align: center;
 		font-size: 2rem;
 	}

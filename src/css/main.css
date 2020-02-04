@@ -210,6 +210,11 @@ main {
 }
 
 .header__title {
+  background-image: -webkit-gradient(linear, left top, right top, from(#373b3e), to(#86cecb));
+  background-image: linear-gradient(to right, #373b3e, #86cecb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   text-align: center;
   font-size: 2rem;
 }
