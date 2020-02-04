@@ -68,3 +68,27 @@ $header-height-lg: 4rem;
 		opacity: 1;
 	}
 }
+
+@keyframes showLinks {
+	0% {
+		display: none;
+		position: absolute;
+		opacity: 0;
+		height: 0;
+	}
+	1% {
+		display: flex;
+		opacity: 0;
+	}
+
+	50% {
+		position: static;
+		height: 25%;
+	}
+
+	100% {
+		display: flex;
+		opacity: 1;
+		height: 50%;
+	}
+}

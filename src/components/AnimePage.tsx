@@ -4,7 +4,7 @@ import {AnimeContext} from "../Context"
 import AnimeItem from "./AnimeItem"
 import Form from "./Form"
 import Loading from "./Loading"
-import Error from "./ErrorPage"
+import ErrorPage from "./ErrorPage"
 
 interface PageProps extends RouteComponentProps<{year: string; cour: string}> {}
 
@@ -38,13 +38,15 @@ const AnimePage: React.FC<PageProps> = props => {
 
 	//goes to error page if url is invalid
 	const data = getAnime(year, cour)
-	if (!data) return <Error />
+	if (!data) return <ErrorPage />
 
 	const {animes} = data
 	const season = getSeason(cour)
 
 	if (animes.length === 0) {
-		return <Error text='この期間の情報はありません' />
+		return (
+			<ErrorPage text='この期間の情報はありません' year={year} cour={cour} />
+		)
 	}
 
 	return (

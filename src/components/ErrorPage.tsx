@@ -4,13 +4,15 @@ const gifError = require("../gifs/animeGif3.gif")
 
 interface ErrorProp {
 	text?: string
+	year?: string
+	cour?: string
 }
 
-const ErrorPage: React.FC<ErrorProp> = ({text}) => {
+const ErrorPage: React.FC<ErrorProp> = ({text, year, cour}) => {
 	return (
 		<>
 			<header className='header'>
-				<Form />
+				<Form year={year} cour={cour} />
 				<h2 className='header__title'>AniFinder</h2>
 			</header>
 			<div className='space'></div>
@@ -27,7 +29,9 @@ const ErrorPage: React.FC<ErrorProp> = ({text}) => {
 }
 
 ErrorPage.defaultProps = {
-	text: "page not found"
+	text: "page not found",
+	year: "2014",
+	cour: "1"
 }
 
 export default ErrorPage

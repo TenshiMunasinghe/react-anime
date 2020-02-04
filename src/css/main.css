@@ -38,6 +38,56 @@
   }
 }
 
+@-webkit-keyframes showLinks {
+  0% {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    height: 0;
+  }
+  1% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 0;
+  }
+  50% {
+    position: static;
+    height: 25%;
+  }
+  100% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 1;
+    height: 50%;
+  }
+}
+
+@keyframes showLinks {
+  0% {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    height: 0;
+  }
+  1% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+  }
+  50% {
+    position: static;
+    height: 25%;
+  }
+  100% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    height: 50%;
+  }
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 /* Smartphones (landscape) ----------- */
 /* Smartphones (portrait) ----------- */
@@ -50,6 +100,10 @@
 html {
   font-size: calc(100vmin / 32);
   scroll-behavior: smooth;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body {
@@ -281,13 +335,14 @@ main {
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 2rem;
   z-index: 1;
 }
 
 .grid li {
+  position: relative;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -303,15 +358,23 @@ main {
       -ms-flex-align: center;
           align-items: center;
   min-height: 10vh;
-  padding-top: 1rem;
   background: #fff;
   -webkit-box-shadow: 0.3rem 0.35rem 1.5rem 0.3rem rgba(0, 0, 0, 0.5);
           box-shadow: 0.3rem 0.35rem 1.5rem 0.3rem rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (min-width: 1224px) {
+@media (pointer: coarse) {
+  .grid li:hover .grid__title {
+    padding: 1rem 2rem;
+  }
+  .grid li:hover .grid__links {
+    height: 5rem;
+    z-index: 2;
+  }
+}
+
+@media (pointer: fine) {
   .grid li {
-    position: relative;
     padding: 1rem;
   }
   .grid li::after {
@@ -325,7 +388,6 @@ main {
     opacity: 0;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    z-index: 2;
   }
   .grid li:hover::after {
     top: 0;
@@ -333,7 +395,18 @@ main {
   }
   .grid li:hover .grid__links .grid__link *,
   .grid li:hover .grid__link-text--none {
+    font-size: 1rem;
     opacity: 1;
+  }
+}
+
+@media (pointer: fine) and (hover: none) {
+  .grid li:hover .grid__title {
+    padding: 1rem 2rem;
+  }
+  .grid li:hover .grid__links {
+    height: 5rem;
+    z-index: 2;
   }
 }
 
@@ -341,18 +414,32 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  height: auto;
+  min-height: 50%;
+  margin: auto;
+  padding: 1rem;
   font-size: 1.5rem;
   text-align: center;
-  padding: 0 0.5rem;
-  font-family: "hans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  line-height: 120%;
+  line-height: 130%;
+  font-family: "hans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (pointer: fine) {
+  .grid__title {
+    padding: 0.5rem;
+  }
 }
 
 .grid__links {
+  height: 0;
   width: 100%;
   background-color: #86cecb;
   display: -webkit-box;
@@ -369,11 +456,14 @@ main {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   text-align: center;
-  z-index: 3;
+  z-index: -1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-@media only screen and (min-width: 1224px) {
+@media (pointer: fine) {
   .grid__links {
+    font-size: 0.1rem;
     position: absolute;
     top: 0;
     height: 100%;
@@ -381,6 +471,7 @@ main {
     margin: auto;
     text-align: center;
     background-color: transparent;
+    z-index: 4;
   }
 }
 
@@ -388,11 +479,17 @@ main {
   margin: 0.5rem;
 }
 
+@media only screen and (min-width: 1224px) {
+  .grid__link {
+    margin: 0;
+  }
+}
+
 .grid__link-text {
   color: #e12885;
 }
 
-@media only screen and (min-width: 1224px) {
+@media (pointer: fine) {
   .grid__link-text--none {
     opacity: 0;
     color: #fff;
