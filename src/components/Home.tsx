@@ -1,13 +1,13 @@
 import * as React from "react"
-import {AnimeContext} from "../Context"
+import { AnimeContext } from "../Context"
 import Form from "./Form"
 import Loading from "./Loading"
 const gifHome = require("../gifs/animeGif2.gif")
 
-const {useContext} = React
+const { useContext, memo } = React
 
-const Home: React.FC = () => {
-	const {loading} = useContext(AnimeContext)
+const Home: React.FC = memo(() => {
+	const { loading } = useContext(AnimeContext)
 
 	return (
 		<>
@@ -30,6 +30,6 @@ const Home: React.FC = () => {
 			)}
 		</>
 	)
-}
+})
 
 export default Home

@@ -1,16 +1,17 @@
 import * as React from "react"
-import {RouteComponentProps} from "react-router-dom"
-import {AnimeContext} from "../Context"
+import { RouteComponentProps } from "react-router-dom"
+import { AnimeContext } from "../Context"
 import AnimeItem from "./AnimeItem"
 import Form from "./Form"
 import Loading from "./Loading"
 import ErrorPage from "./ErrorPage"
 
-interface PageProps extends RouteComponentProps<{year: string; cour: string}> {}
+interface PageProps
+	extends RouteComponentProps<{ year: string; cour: string }> {}
 
-const {useState, useContext, useEffect} = React
+const { useState, useContext, useEffect } = React
 
-const AnimePage: React.FC<PageProps> = props => {
+const AnimePage: React.FC<PageProps> = React.memo(props => {
 	const [showBtn, setShowBtn] = useState(false)
 
 	useEffect(() => {
@@ -30,17 +31,17 @@ const AnimePage: React.FC<PageProps> = props => {
 		}
 	}
 
-	const {getAnime, getSeason, loading} = useContext(AnimeContext)
+	const { getAnime, getSeason, loading } = useContext(AnimeContext)
 
 	if (loading) return <Loading />
 
-	const {year, cour} = props.match.params
+	const { year, cour } = props.match.params
 
 	//goes to error page if url is invalid
 	const data = getAnime(year, cour)
 	if (!data) return <ErrorPage />
 
-	const {animes} = data
+	const { animes } = data
 	const season = getSeason(cour)
 
 	if (animes.length === 0) {
@@ -80,6 +81,6 @@ const AnimePage: React.FC<PageProps> = props => {
 			</a>
 		</>
 	)
-}
+})
 
 export default AnimePage
