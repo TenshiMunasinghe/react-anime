@@ -1,8 +1,8 @@
-#[Anifinder](https://tenshi-react-anime-project.netlify.com/)
+# [Anifinder](https://tenshi-react-anime-project.netlify.com/)
 
 Simple Anime finder that lets you filter by year and season providing links to official website and twitter.
 
-####Technologies used :
+#### Technologies used :
 
 - React
 - hooks
@@ -10,4 +10,4 @@ Simple Anime finder that lets you filter by year and season providing links to o
 - scss
 - ShangriLa Anime API
 
-######Find the project [here](https://tenshi-react-anime-project.netlify.com/)
+###### Find the project [here](https://tenshi-react-anime-project.netlify.com/)
