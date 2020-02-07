@@ -1,6 +1,6 @@
 import * as React from "react"
 import Form from "./Form"
-const gifHome = require("../gifs/animeGif2.gif")
+import gifHome from "../gifs/animeGif2.gif"
 
 const { memo } = React
 

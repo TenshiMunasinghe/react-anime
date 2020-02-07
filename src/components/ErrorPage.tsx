@@ -1,6 +1,6 @@
 import * as React from "react"
 import Form from "./Form"
-const gifError = require("../gifs/animeGif3.gif")
+import gifError from "../gifs/animeGif3.gif"
 
 interface ErrorProp {
 	text?: string
@@ -8,7 +8,7 @@ interface ErrorProp {
 	cour?: string
 }
 
-const ErrorPage: React.FC<ErrorProp> = ({text, year, cour}) => {
+const ErrorPage: React.FC<ErrorProp> = ({ text, year, cour }) => {
 	return (
 		<>
 			<header className='header'>

@@ -1,5 +1,5 @@
 import * as React from "react"
-const gifLoad = require("../gifs/animeGif4.gif")
+import gifLoad from "../gifs/animeGif4.gif"
 
 const Loading: React.FC = () => {
 	return (
