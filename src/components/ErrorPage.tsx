@@ -1,6 +1,6 @@
 import * as React from "react"
 import Form from "./Form"
-import gifError from "../gifs/animeGif3.gif"
+const gifError = require("../gifs/animeGif3.gif")
 
 interface ErrorProp {
 	text?: string
