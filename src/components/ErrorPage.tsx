@@ -1,6 +1,6 @@
 import * as React from "react"
 import Form from "./Form"
-const gifError = require("../gifs/animeGif3.gif")
+import gifError from "../gifs/animeGif3.gif"
 
 interface ErrorProp {
 	text?: string
@@ -20,7 +20,7 @@ const ErrorPage: React.FC<ErrorProp> = ({ text, year, cour }) => {
 				<section className='error'>
 					<div className='error__content'>
 						<p className='error__text'>{text}</p>
-						<img src={gifError} alt='' className='error__img' />
+						{/* <img src={gifError} alt='' className='error__img' /> */}
 					</div>
 				</section>
 			</main>

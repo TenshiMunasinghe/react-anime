@@ -580,16 +580,7 @@ main {
 .error * {
   text-align: center;
   margin: auto;
-}
-
-.error__image {
-  height: 16rem;
-}
-
-@media only screen and (min-width: 1224px) {
-  .error__image {
-    height: 13rem;
-  }
+  font-size: 2rem;
 }
 
 * {

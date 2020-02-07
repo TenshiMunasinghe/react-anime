@@ -7,12 +7,13 @@
 	* {
 		text-align: center;
 		margin: auto;
+		font-size: 2rem;
 	}
 
-	&__image {
-		height: 16rem;
-		@include desktop-laptop {
-			height: 13rem;
-		}
-	}
+	// &__image {
+	// 	height: 16rem;
+	// 	@include desktop-laptop {
+	// 		height: 13rem;
+	// 	}
+	// }
 }

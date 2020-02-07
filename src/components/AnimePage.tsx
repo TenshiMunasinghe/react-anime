@@ -51,7 +51,11 @@ const AnimePage: React.FC<PageProps> = React.memo(props => {
 
 	if (animes.length === 0) {
 		return (
-			<ErrorPage text='この期間の情報はありません' year={year} cour={cour} />
+			<ErrorPage
+				text='この期間の情報はありません&lt;(_ _)&gt;'
+				year={year}
+				cour={cour}
+			/>
 		)
 	}
 
