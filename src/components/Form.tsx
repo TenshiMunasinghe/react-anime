@@ -1,4 +1,6 @@
 import * as React from "react"
+import AnimateOnChange from "react-animate-on-change"
+import usePrev from "../customHooks/usePrev"
 import { years, cours } from "../constants"
 import { Link } from "react-router-dom"
 import { AnimeContext } from "../Context"
@@ -14,6 +16,7 @@ const Form: React.FC<FormProp> = ({ year, cour }) => {
 	const filteredYears = years.filter(e => e !== year)
 	const filteredCours = cours.filter(e => e !== cour)
 	let { getSeason } = useContext(AnimeContext)
+	const { prevYear, prevCour } = usePrev(year, cour)
 
 	const yearsLinks = filteredYears.map((e, i) => (
 		<Link key={i} to={`/${e}/${cour}`} className='form__link'>
@@ -33,11 +36,26 @@ const Form: React.FC<FormProp> = ({ year, cour }) => {
 	return (
 		<div className='form' id='year'>
 			<div className='form__dropdown'>
-				<div className='form__button'>{year}</div>
+				<div className='form__button'>
+					<AnimateOnChange
+						baseClassName='fade'
+						animationClassName='fade--active'
+						animate={prevYear !== year}>
+						{year}
+					</AnimateOnChange>
+				</div>
 				<div className='form__dropdown-content'>{yearsLinks}</div>
 			</div>
+
 			<div className='form__dropdown'>
-				<div className='form__button'>{getSeason(cour)}</div>
+				<div className='form__button'>
+					<AnimateOnChange
+						baseClassName='fade'
+						animationClassName='fade--active'
+						animate={prevCour !== cour}>
+						{getSeason(cour)}{" "}
+					</AnimateOnChange>
+				</div>
 				<div className='form__dropdown-content'>{coursLinks}</div>
 			</div>
 		</div>

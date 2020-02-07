@@ -1,7 +1,7 @@
 import * as React from "react"
-import {years, cours, seasons} from "./constants"
+import { years, cours, seasons } from "./constants"
 
-const {useState, useEffect, createContext} = React
+const { useState, useEffect, createContext } = React
 
 interface ContextProps {
 	allAnimes: any[]
@@ -16,7 +16,7 @@ const AnimeProvider: React.FC<{
 	children: React.ReactNode
 }> = props => {
 	const [allAnimes, setAllAnimes] = useState<any[]>([])
-	const [loading, setLoading] = useState(true)
+	const [loading, setLoading] = useState<boolean>(true)
 
 	useEffect(() => {
 		const getData = async (year: string, cour: string) => {
@@ -33,7 +33,7 @@ const AnimeProvider: React.FC<{
 					for (const cour of cours) {
 						const response = await getData(year, cour)
 						const animes = await response.json()
-						tempAllAnimes.push({year, cour, animes})
+						tempAllAnimes.push({ year, cour, animes })
 					}
 				}
 				setAllAnimes(tempAllAnimes)
@@ -67,4 +67,4 @@ const AnimeProvider: React.FC<{
 	)
 }
 
-export {AnimeProvider, AnimeContext}
+export { AnimeProvider, AnimeContext }

@@ -164,6 +164,29 @@ main {
   margin: auto;
 }
 
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade--active {
+  -webkit-animation: fade 0.7s ease-in-out forwards;
+          animation: fade 0.7s ease-in-out forwards;
+}
+
 .home {
   min-height: calc(100vh - 5.3rem);
   display: -webkit-box;

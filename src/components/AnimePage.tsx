@@ -1,6 +1,8 @@
 import * as React from "react"
 import { RouteComponentProps } from "react-router-dom"
+import AnimateOnChange from "react-animate-on-change"
 import { AnimeContext } from "../Context"
+import usePrev from "../customHooks/usePrev"
 import AnimeItem from "./AnimeItem"
 import Form from "./Form"
 import Loading from "./Loading"
@@ -12,13 +14,15 @@ interface PageProps
 const { useState, useContext, useEffect } = React
 
 const AnimePage: React.FC<PageProps> = React.memo(props => {
-	const [showBtn, setShowBtn] = useState(false)
+	const [showBtn, setShowBtn] = useState<boolean>(false)
 
 	useEffect(() => {
 		window.addEventListener("scroll", checkScroll)
 
 		return () => window.removeEventListener("scroll", checkScroll)
 	}, [])
+
+	useEffect(() => {}, [])
 
 	const checkScroll = () => {
 		if (
@@ -36,6 +40,7 @@ const AnimePage: React.FC<PageProps> = React.memo(props => {
 	if (loading) return <Loading />
 
 	const { year, cour } = props.match.params
+	const { prevYear, prevCour } = usePrev(year, cour)
 
 	//goes to error page if url is invalid
 	const data = getAnime(year, cour)
@@ -55,11 +60,22 @@ const AnimePage: React.FC<PageProps> = React.memo(props => {
 			<header className='header'>
 				<Form year={year} cour={cour} />
 				<h2 className='header__info'>
-					<span className='header__info--emphasis'>{year}</span>年
+					<AnimateOnChange
+						baseClassName='fade header__info--emphasis'
+						animationClassName='fade--active'
+						animate={prevYear !== year}>
+						{year}
+					</AnimateOnChange>
+					年
 					{season === "全て" ? (
 						""
 					) : (
-						<span className='header__info--emphasis'>{season}</span>
+						<AnimateOnChange
+							baseClassName='fade header__info--emphasis'
+							animationClassName='fade--active'
+							animate={prevCour !== cour}>
+							{season}
+						</AnimateOnChange>
 					)}
 					アニメ
 				</h2>
