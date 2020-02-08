@@ -11,20 +11,15 @@ import ErrorPage from "./ErrorPage"
 interface PageProps
 	extends RouteComponentProps<{ year: string; cour: string }> {}
 
-const { useState, useContext, useEffect } = React
+const { useState, useContext, useEffect, useCallback } = React
 
-const AnimePage: React.FC<PageProps> = React.memo(props => {
+const AnimePage: React.FC<PageProps> = ({ match }) => {
+	const { getAnime, getSeason, loading } = useContext(AnimeContext)
 	const [showBtn, setShowBtn] = useState<boolean>(false)
+	const { year, cour } = match.params
+	const { prevYear, prevCour } = usePrev(year, cour)
 
-	useEffect(() => {
-		window.addEventListener("scroll", checkScroll)
-
-		return () => window.removeEventListener("scroll", checkScroll)
-	}, [])
-
-	useEffect(() => {}, [])
-
-	const checkScroll = () => {
+	const checkScroll = useCallback(() => {
 		if (
 			document.body.scrollTop > 20 ||
 			document.documentElement.scrollTop > 20
@@ -33,17 +28,18 @@ const AnimePage: React.FC<PageProps> = React.memo(props => {
 		} else {
 			setShowBtn(false)
 		}
-	}
+	}, [])
 
-	const { getAnime, getSeason, loading } = useContext(AnimeContext)
+	useEffect(() => {
+		window.addEventListener("scroll", checkScroll)
+
+		return () => window.removeEventListener("scroll", checkScroll)
+	}, [checkScroll])
 
 	if (loading) return <Loading />
 
-	const { year, cour } = props.match.params
-	const { prevYear, prevCour } = usePrev(year, cour)
-
-	//goes to error page if url is invalid
 	const data = getAnime(year, cour)
+
 	if (!data) return <ErrorPage />
 
 	const { animes } = data
@@ -101,6 +97,6 @@ const AnimePage: React.FC<PageProps> = React.memo(props => {
 			</a>
 		</>
 	)
-})
+}
 
 export default AnimePage

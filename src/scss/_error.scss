@@ -3,7 +3,8 @@
 	margin: auto;
 	justify-content: center;
 	align-items: center;
-	height: calc(100vh - 5rem);
+	background-color: $background-color;
+	@include main-height;
 	* {
 		text-align: center;
 		margin: auto;

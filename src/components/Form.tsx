@@ -10,28 +10,36 @@ interface FormProp {
 	cour?: string
 }
 
-const { useContext } = React
+const { useContext, useMemo, memo } = React
 
-const Form: React.FC<FormProp> = ({ year, cour }) => {
+const Form: React.FC<FormProp> = memo(({ year, cour }) => {
 	const filteredYears = years.filter(e => e !== year)
 	const filteredCours = cours.filter(e => e !== cour)
 	let { getSeason } = useContext(AnimeContext)
 	const { prevYear, prevCour } = usePrev(year, cour)
 
-	const yearsLinks = filteredYears.map((e, i) => (
-		<Link key={i} to={`/${e}/${cour}`} className='form__link'>
-			<span className='form__link-text'>{e}</span>
-		</Link>
-	))
+	const yearsLinks = useMemo(
+		() =>
+			filteredYears.map((e, i) => (
+				<Link key={i} to={`/${e}/${cour}`} className='form__link'>
+					<span className='form__link-text'>{e}</span>
+				</Link>
+			)),
+		[filteredYears, cour]
+	)
 
-	const coursLinks = filteredCours.map((e, i) => {
-		const season = getSeason(e)
-		return (
-			<Link key={i} to={`/${year}/${e}`} className='form__link'>
-				<span className='form__link-text'>{season}</span>
-			</Link>
-		)
-	})
+	const coursLinks = useMemo(
+		() =>
+			filteredCours.map((e, i) => {
+				const season = getSeason(e)
+				return (
+					<Link key={i} to={`/${year}/${e}`} className='form__link'>
+						<span className='form__link-text'>{season}</span>
+					</Link>
+				)
+			}),
+		[filteredCours, year, getSeason]
+	)
 
 	return (
 		<div className='form' id='year'>
@@ -60,7 +68,7 @@ const Form: React.FC<FormProp> = ({ year, cour }) => {
 			</div>
 		</div>
 	)
-}
+})
 
 Form.defaultProps = {
 	year: "2014",

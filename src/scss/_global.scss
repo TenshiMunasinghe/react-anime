@@ -18,15 +18,11 @@ body {
 }
 
 main {
-	padding: 1rem 0;
-	min-height: calc(100vh - #{$header-height-mobile});
+	padding: 2rem 0;
 	min-width: 100vw;
 	// @include background-gradient;
 	background-color: $background-color;
-
-	@include desktop-laptop {
-		min-height: calc(100vh - #{$header-height-lg});
-	}
+	@include main-height;
 }
 
 .space {

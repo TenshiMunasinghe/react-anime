@@ -1,17 +1,12 @@
 .home {
-	min-height: calc(100vh - #{$header-height-mobile});
+	@include main-height;
 	display: flex;
 	margin: auto;
 	justify-content: center;
 	align-items: center;
-	height: calc(100vh - 5rem);
 	@include background-gradient;
 	* {
 		text-align: center;
 		margin: auto;
-	}
-
-	@include desktop-laptop {
-		min-height: calc(100vh - #{$header-height-lg});
 	}
 }

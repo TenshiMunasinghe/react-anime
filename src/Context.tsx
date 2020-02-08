@@ -1,21 +1,33 @@
 import * as React from "react"
 import { years, cours, seasons } from "./constants"
 
-const { useState, useEffect, createContext } = React
+const { useState, useEffect, createContext, useCallback } = React
 
 interface ContextProps {
-	allAnimes: any[]
+	allAnimes: Animes[]
 	loading: boolean
-	getAnime: any
-	getSeason: any
+	getAnime: (year: string, cour: string) => Animes
+	getSeason: (cour: string) => string
+}
+
+interface Animes {
+	year: string
+	cour: string
+	animes: []
 }
 
 const AnimeContext = createContext({} as ContextProps)
 
+const getSeason = (cour: string) => {
+	const i = Number(cour)
+	const season = seasons[i - 1] ? seasons[i - 1] : "全て"
+	return season
+}
+
 const AnimeProvider: React.FC<{
 	children: React.ReactNode
-}> = props => {
-	const [allAnimes, setAllAnimes] = useState<any[]>([])
+}> = ({ children }) => {
+	const [allAnimes, setAllAnimes] = useState<Animes[]>([])
 	const [loading, setLoading] = useState<boolean>(true)
 
 	useEffect(() => {
@@ -44,15 +56,12 @@ const AnimeProvider: React.FC<{
 		})()
 	}, [])
 
-	const getAnime = (year: string, cour: string) => {
-		return allAnimes.find(e => e.year === year && e.cour === cour)
-	}
-
-	const getSeason = (cour: string) => {
-		const i = Number(cour)
-		const season = seasons[i - 1] ? seasons[i - 1] : "全て"
-		return season
-	}
+	const getAnime = useCallback(
+		(year: string, cour: string) => {
+			return allAnimes.find(e => e.year === year && e.cour === cour)
+		},
+		[allAnimes]
+	)
 
 	return (
 		<AnimeContext.Provider
@@ -62,7 +71,7 @@ const AnimeProvider: React.FC<{
 				getAnime,
 				getSeason
 			}}>
-			{props.children}
+			{children}
 		</AnimeContext.Provider>
 	)
 }
