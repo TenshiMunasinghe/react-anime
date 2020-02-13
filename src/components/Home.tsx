@@ -15,7 +15,9 @@ const Home: React.FC = memo(() => {
 			<section className='home'>
 				<div className='home__content'>
 					<p className='home__p'>放送年と季節を選択してください</p>
-					<img src={gifHome} alt='' className='home__img' />
+					<figure>
+						<img src={gifHome} alt='' className='home__img' />
+					</figure>
 				</div>
 			</section>
 		</>
