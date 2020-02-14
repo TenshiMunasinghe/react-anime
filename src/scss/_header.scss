@@ -7,6 +7,7 @@
 	justify-content: space-evenly;
 	align-items: center;
 	z-index: 999;
+	box-shadow: 0 0.08rem 0.1rem 0.05rem rgba($color: #747474, $alpha: 0.8);
 
 	&__title {
 		background-image: linear-gradient(to right, $font-color, $secondary-color);
@@ -14,14 +15,14 @@
 		-webkit-background-clip: text;
 		color: transparent;
 		text-align: center;
-		font-size: 2rem;
+		font-size: 1rem;
 	}
 
 	&__info {
-		font-size: 1.7rem;
+		font-size: 1.5rem;
 
 		&--emphasis {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			color: $secondary-color;
 		}
 	}
@@ -30,14 +31,14 @@
 		height: $header-height-lg;
 
 		&__title {
-			font-size: 2.5rem;
+			font-size: 2rem;
 		}
 
 		&__info {
-			font-size: 2rem;
+			font-size: 1.5rem;
 
 			&--emphasis {
-				font-size: 2.5rem;
+				font-size: 2rem;
 				color: $secondary-color;
 			}
 		}
