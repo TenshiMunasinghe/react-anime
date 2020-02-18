@@ -10,12 +10,15 @@
 	box-shadow: 0 0.08rem 0.1rem 0.05rem rgba($color: #747474, $alpha: 0.8);
 
 	&__title {
-		background-image: linear-gradient(to right, $font-color, $secondary-color);
+		background-image: linear-gradient(
+			to right,
+			$font-color,
+			$secondary-color
+		);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
-		text-align: center;
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 
 	&__info {
