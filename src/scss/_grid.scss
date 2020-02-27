@@ -1,149 +1,149 @@
 .grid {
-	max-width: 70vw;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-	grid-gap: 2rem;
-	z-index: 1;
-	li {
-		position: relative;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		min-height: 10vh;
-		background: #fff;
-		box-shadow: 0.05rem 0.1rem 0.4rem -0.1rem rgba(0, 0, 0, 0.5);
-		background-color: white;
-		@include touch {
-			&:hover {
-				.grid__title {
-					padding: 1rem 2rem;
-				}
-				.grid__links {
-					height: 5rem;
-					z-index: 2;
-				}
-			}
-		}
+    max-width: 70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 2rem;
+    z-index: 1;
+    li {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 10vh;
+        background: #fff;
+        box-shadow: 0.05rem 0.05rem 0.05rem -0.05rem rgba(80, 80, 80, 0.5);
+        background-color: white;
+        @include touch {
+            &:hover {
+                .grid__title {
+                    padding: 1rem 2rem;
+                }
+                .grid__links {
+                    height: 5rem;
+                    z-index: 2;
+                }
+            }
+        }
 
-		@include mouse {
-			padding: 1rem;
+        @include mouse {
+            padding: 1rem;
 
-			&::after {
-				content: "";
-				position: absolute;
-				top: 100%;
-				left: 0;
-				height: 100%;
-				width: 100%;
-				background: $secondary-color;
-				opacity: 0;
-				@include transition-ease;
-			}
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: $secondary-color;
+                opacity: 0;
+                @include transition-ease;
+            }
 
-			&:hover {
-				&::after {
-					top: 0;
-					opacity: 0.9;
-				}
-				.grid__links .grid__link *,
-				.grid__link-text--none {
-					font-size: 1rem;
-					opacity: 1;
-				}
-			}
-		}
+            &:hover {
+                &::after {
+                    top: 0;
+                    opacity: 0.9;
+                }
+                .grid__links .grid__link *,
+                .grid__link-text--none {
+                    font-size: 1rem;
+                    opacity: 1;
+                }
+            }
+        }
 
-		@include touchLaptop {
-			&:hover {
-				.grid__title {
-					padding: 1rem 2rem;
-				}
-				.grid__links {
-					height: 5rem;
-					z-index: 2;
-				}
-			}
-		}
-	}
+        @include touchLaptop {
+            &:hover {
+                .grid__title {
+                    padding: 1rem 2rem;
+                }
+                .grid__links {
+                    height: 5rem;
+                    z-index: 2;
+                }
+            }
+        }
+    }
 
-	&__title {
-		display: flex;
-		height: auto;
-		min-height: 50%;
-		margin: auto;
-		padding: 1rem;
-		font-size: 1.5rem;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-		line-height: 130%;
-		@include Hans-font;
-		@include transition-ease;
+    &__title {
+        display: flex;
+        height: auto;
+        min-height: 50%;
+        margin: auto;
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        line-height: 130%;
+        @include Hans-font;
+        @include transition-ease;
 
-		@include mouse {
-			padding: 0.5rem;
-		}
-	}
+        @include mouse {
+            padding: 0.5rem;
+        }
+    }
 
-	&__links {
-		height: 0;
-		width: 100%;
-		background-color: $secondary-color;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-evenly;
-		text-align: center;
-		z-index: -1;
-		@include transition-ease;
+    &__links {
+        height: 0;
+        width: 100%;
+        background-color: $secondary-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        z-index: -1;
+        @include transition-ease;
 
-		@include mouse {
-			font-size: 0.1rem;
-			position: absolute;
-			top: 0;
-			height: 100%;
-			width: 100%;
-			margin: auto;
-			text-align: center;
-			background-color: transparent;
-			z-index: 4;
-		}
-	}
+        @include mouse {
+            font-size: 0.1rem;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            background-color: transparent;
+            z-index: 4;
+        }
+    }
 
-	&__link {
-		margin: 0.5rem;
+    &__link {
+        margin: 0.5rem;
 
-		@include desktop-laptop {
-			margin: 0;
-		}
-	}
+        @include desktop-laptop {
+            margin: 0;
+        }
+    }
 
-	&__link-text {
-		color: $primary-color;
-	}
+    &__link-text {
+        color: $primary-color;
+    }
 
-	@include mouse {
-		&__link-text--none {
-			opacity: 0;
-			color: #fff;
-			@include transition-ease;
-		}
+    @include mouse {
+        &__link-text--none {
+            opacity: 0;
+            color: #fff;
+            @include transition-ease;
+        }
 
-		&__link {
-			* {
-				opacity: 0;
-				color: #fff;
-				@include transition-ease;
-			}
+        &__link {
+            * {
+                opacity: 0;
+                color: #fff;
+                @include transition-ease;
+            }
 
-			&:hover {
-				* {
-					color: $primary-color;
-				}
-			}
-		}
-	}
+            &:hover {
+                * {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
 }
