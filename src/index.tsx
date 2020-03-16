@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import App from "./components/App"
 import { BrowserRouter as Router } from "react-router-dom"
 import { AnimeProvider } from "./Context"
-import "./css/main.css"
+import "./global.css"
 
 ReactDOM.render(
     <AnimeProvider>
